@@ -16,8 +16,14 @@ export async function GET() {
             sameSite: "None", // Set to 'None' if you want to clear cookies across different subdomains
         });
 
+        // Log to the server console for debugging
+        console.log("Cookie cleared successfully");
+
         return response;
     } catch (error) {
+        // Log any errors to the server console
+        console.error("Error clearing cookie:", error.message);
+
         return NextResponse.json({ error: error.message }, { status: 500 });
     }
 }
