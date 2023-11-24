@@ -13,6 +13,7 @@ export async function GET() {
             domain: "empiretechnology.vercel.app", // Change this to your domain
             path: "/", // Change this to your path
             secure: process.env.NODE_ENV === "production", // Set to true if using HTTPS in production
+            sameSite: "None", // Set to 'None' if you want to clear cookies across different subdomains
         });
 
         return response;
