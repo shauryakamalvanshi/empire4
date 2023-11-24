@@ -19,9 +19,10 @@ export default function ContactForm() {
     phone: "",
     message: "",
   })
+  const re="6LesuhcpAAAAAPGmyPmrkjKLdJmVEPQMGuWqU62c";
 
   function onChange(){
-    console.log('changes');
+    // console.log('changes');
     setCaptchaDone(true)
   }
   const isSubmitDisabled =!captchaDone;
@@ -32,7 +33,7 @@ export default function ContactForm() {
    
     if (user.fname.length>0&&user.lname.length>0&&user.email.length>0&&user.phone.length>0&&user.message.length>0&&isSubmitDisabled==false) {
       const response=await axios.post("/api/users/contact",user);
-      console.log("Message send succesfully");
+      // console.log("Message send succesfully");
       toast.success('Message sent succesfully')
       setCaptchaDone(false);
       
@@ -52,7 +53,7 @@ export default function ContactForm() {
    
     
    } catch (error) {
-    console.log("contact form error");
+    // console.log("contact form error");
     console.log(error.message);
    }
 
@@ -180,9 +181,9 @@ export default function ContactForm() {
               />
             </div>
           </div>
-          <div className="flex justify-center pb-1">
+          <div className="mr-autoo ">
 
-          <ReCAPTCHA sitekey="6LesuhcpAAAAAPGmyPmrkjKLdJmVEPQMGuWqU62c"  onChange={onChange} className=" w-5"  />
+          <ReCAPTCHA sitekey={re}  onChange={onChange} className=" w-5"  />
       </div>
         </div>
         <div className="mt-5">
