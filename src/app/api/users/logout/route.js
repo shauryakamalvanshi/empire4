@@ -8,14 +8,10 @@ export async function GET(){
                 success:true,
             }
         )
-        response.cookies.set("token", "", {
-            httpOnly: false,
-            expires: new Date(0),
-            secure: true, // Set to true if your site is served over HTTPS
-            domain: "empiretechnology.vercel.app", // Set the correct domain
-            path: "/", // Set the correct path
-            SameSite: "None", // Set to 'None' if your logout involves cross-origin requests
-        });
+        response.cookies.set("token", "", { httpOnly: true, expires: new Date(0), domain: "empiretechnology.vercel.app", path: "/" });
+
+        response.cookies.set("token","",{httpOnly:true,expires:new Date(0)})
+
       return response;
       
         
