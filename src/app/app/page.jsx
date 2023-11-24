@@ -1,5 +1,5 @@
 import React from "react";
-import Phases from "@/components/phases";
+import Phases from "@/components/Phases";
 // import styles from "@/styles/web.module.css";
 import PricingCard from "@/components/Pricecard";
 import Ourplate from "@/components/Ourplate";

@@ -1,5 +1,5 @@
 import React from "react";
-import Phases from "@/components/phases";
+import Phases from "@/components/Phases";
 import PricingCard from "@/components/Pricecard";
 import Image from "next/image";
 import Seoprice from "@/components/Seoprice";
