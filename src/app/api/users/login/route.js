@@ -51,7 +51,7 @@ async function POST(request) {
       email:user.email,
     }
 //create token
-const token=await Jwt.sign(tokenData,process.env.TOKEN_SECRET,{expiresIn:"1m"})
+const token=await Jwt.sign(tokenData,process.env.TOKEN_SECRET,{expiresIn:"1h"})
 
      const response = NextResponse.json({
       message: "Login Successfully",
