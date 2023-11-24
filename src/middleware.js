@@ -26,7 +26,8 @@ export function middleware(request) {
   export const config = {
     matcher: [
       '/admin',
-      '/login'
+      '/login',
+      '/api/users/contact'
     ],
   };
   

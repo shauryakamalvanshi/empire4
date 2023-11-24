@@ -7,7 +7,7 @@ console.log("Route page")
 delete mongoose.connection.models['Users'];
 const Users = mongoose.model('Users', new mongoose.Schema({
   email: String,
-  _id: String,
+  password: String,
    // Add this line if message is a String
 }));
 
@@ -33,13 +33,16 @@ async function POST(request) {
   try {
     await connectDB();
     const reqBody = await request.json();
-    const { email } = reqBody;
+    const { email,password } = reqBody;
     console.log(reqBody);
 
     // check whether the user exists
     const user = await Users.findOne({ email });
+    const user1 = await Users.findOne({ password });
+
     console.log("User found:", user);
-    if (!user) {
+    console.log(user1)
+    if (!user||!user1) {
       return NextResponse.json({ error: "user does not exist" }, { status: 400 });
     }
     //create token data

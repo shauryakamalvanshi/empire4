@@ -34,7 +34,7 @@ const Page = () => {
     try {
       await axios.get('api/users/logout');
       toast.success('logout successfully');
-      router.push('/login');
+      router.push('/');
     } catch (error) {
       console.log(error);
     }
@@ -73,7 +73,8 @@ const Page = () => {
             <th className={styles.th}>Email</th>
             <th className={styles.th}>Phone</th>
             <th className={styles.th}>Message</th>
-            <th className={styles.th}>delete</th>
+            <th className={styles.th}>delete
+            </th>
           </tr>
         </thead>
         <tbody>

@@ -19,9 +19,7 @@ const LoginPage = () => {
       const checkUser=async(e)=>{
         // e.preventDefault();
         try {
-            alert("try")
             const response=await axios.post("/api/users/login",user);
-            alert("try 2")
             console.log("Login successfully", response.data);
             router.push("/admin");
        
