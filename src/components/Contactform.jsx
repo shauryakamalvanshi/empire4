@@ -21,9 +21,8 @@ export default function ContactForm() {
   })
   const re="6LesuhcpAAAAAPGmyPmrkjKLdJmVEPQMGuWqU62c";
 
-  function onChange(){
-    // console.log('changes');
-    setCaptchaDone(true)
+  function handleCaptchaChange() {
+    setCaptchaDone(true);
   }
   const isSubmitDisabled =!captchaDone;
 
@@ -183,7 +182,7 @@ export default function ContactForm() {
           </div>
           <div className="mr-autoo ">
 
-          <ReCAPTCHA sitekey={re}  onChange={onChange} className=" w-5"  />
+          <ReCAPTCHA sitekey={re}  onChange={handleCaptchaChange} className=" w-5"  />
       </div>
         </div>
         <div className="mt-5">
@@ -193,7 +192,7 @@ export default function ContactForm() {
             type="submit"
             className="block w-full rounded-md bg-indigo-600 px-3 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
           >
-            Let's talk
+             Let&rsquo;s talk
           </button>
           <Toaster></Toaster>
  
