@@ -66,17 +66,6 @@ export async function POST(req) {
   }
 
   // ***************get request******
-  export async function GET(){
-    try {
-      await mongoose.connect(process.env.MONGO_URI);
-      const topics=await Contact.find();
-      return NextResponse.json({topics});
-      console.log("Get data");
-    } catch (error) {
-      console.log(error);
-    } 
-  
-  }
 
   // ****************Delete**************
 
