@@ -4,13 +4,14 @@ import styles from "@/styles/contact.module.css"
 import Image from 'next/image'
 
 const page = () => {
+
   return (
     <div>
       <div className={styles.main}>
         <div className="map h-fit  ">
           <Image src="/Screenshot.png" width={2000} height={90} alt="map" className='rounded-lg' />
         </div>
-
+      
         <div className={styles.low}>
           <div className="flex max-lg:flex-col ">
             <div className="ml-auto mr-auto mt-40 w-1/2 max-lg:flex max-lg:flex-col max-lg:items-center border-gray-200	">

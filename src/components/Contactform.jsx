@@ -4,6 +4,8 @@ import { Switch } from "@headlessui/react";
 import axios from "axios";
 import toast, { Toaster } from "react-hot-toast";
 import ReCAPTCHA from "react-google-recaptcha";
+import LoadingSpinner from '@/components/Loader'
+
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -12,6 +14,8 @@ function classNames(...classes) {
 export default function ContactForm() {
 
   const [captchaDone, setCaptchaDone] = useState(false);
+  const [loading,setLoading]=useState(false);
+  
   const [user, setUser] =useState({
     fname: "",
     lname: "",
@@ -28,9 +32,11 @@ export default function ContactForm() {
 
   const submit= async(e)=>{
     e.preventDefault();
+    
    try {
-   
+  
     if (user.fname.length>0&&user.lname.length>0&&user.email.length>0&&user.phone.length>0&&user.message.length>0&&isSubmitDisabled==false) {
+      setLoading(true);
       const response=await axios.post("/api/users/contact",user);
       // console.log("Message send succesfully");
       toast.success('Message sent succesfully')
@@ -43,6 +49,7 @@ export default function ContactForm() {
         phone: "",
         message: "",
       });
+      setLoading(false);
     }
     else{
       toast.error("Please fill the required fild")
@@ -184,14 +191,16 @@ export default function ContactForm() {
       </div>
         </div>
         <div className="mt-5">
-          <button
-          onClick={submit}
-         
-            type="submit"
-            className="block w-full rounded-md bg-indigo-600 px-3 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-          >
-             Let&rsquo;s talk
-          </button>
+        {loading ? <LoadingSpinner /> : (
+    <button
+      onClick={submit}
+      type="submit"
+      className="block w-full rounded-md bg-indigo-600 px-3 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+    >
+      Let&rsquo;s talk
+    </button>
+  )}
+          
           <Toaster></Toaster>
  
         </div>
