@@ -43,8 +43,6 @@ export default function ContactForm() {
         phone: "",
         message: "",
       });
-    }else if (isSubmitDisabled==false) {
-      toast.error("plase fill the captcah")
     }
     else{
       toast.error("Please fill the required fild")
