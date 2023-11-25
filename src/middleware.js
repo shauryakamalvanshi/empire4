@@ -27,7 +27,6 @@ export function middleware(request) {
     matcher: [
       '/admin',
       '/login',
-      '/api/users/contact'
     ],
   };
   
