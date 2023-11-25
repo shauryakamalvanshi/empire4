@@ -9,7 +9,7 @@ import Deleteicon from '@/components/Deleteicon';
 
 const getData = async () => {
   try {
-    const res = await fetch(`/api/users/contact/`, {
+    const res = await fetch(`/api/users/getdata/`, {
       cache: 'no-store',
     });
     if (!res.ok) {
